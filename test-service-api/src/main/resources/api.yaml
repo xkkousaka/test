@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: OpenAPI Sample
+  description: OpenAPI Sample
+  version: 0.0.0
+
+paths:
+  /sample:
+    post:
+      summary: Create sample
+      operationId: createSample
+      tags:
+        - sample
+      responses:
+        '201':
+          description: Null response
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Error:
+      description: error
+      type: object
